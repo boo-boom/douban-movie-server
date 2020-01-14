@@ -2,12 +2,20 @@ const Router = require("koa-router");
 const router = new Router({
   prefix: "/v1"
 });
+const Validator = require("../../core/validator");
 
 router.get("/hello/:name", async ctx => {
-  const name = ctx.params.name;
-  // throw new Error("123123");
-  // console.log(global.errs);
-  ctx.response.body = `<h5>Hello, ${name}!</h5>`;
+  const name = ctx.params.id;
+  new Validator([
+    {
+      field: name,
+      isOptional: false,
+      rules: [{ type: "isInt", param: { min: 120 } }]
+    }
+  ]);
+  ctx.body = {
+    key: name
+  };
 });
 
 module.exports = router;

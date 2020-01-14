@@ -2,7 +2,7 @@ const Koa = require("koa");
 const koaBody = require("koa-body");
 const app = new Koa();
 const config = require("./config");
-const InitManager = require("./src/core/Init");
+const InitManager = require("./src/core/init");
 const catchError = require("./src/middleware/catchError");
 
 app.use(catchError);

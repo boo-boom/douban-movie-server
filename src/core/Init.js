@@ -20,7 +20,7 @@ class InitManager {
   }
 
   static loadHttpException() {
-    const errs = require("./HttpException");
+    const errs = require("./httpException");
     global.errs = errs;
   }
 }
