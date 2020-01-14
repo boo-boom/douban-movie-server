@@ -9,8 +9,12 @@ router.get("/hello/:name", async ctx => {
   new Validator([
     {
       field: name,
-      isOptional: false,
-      rules: [{ type: "isInt", param: { min: 120 } }]
+      isOptional: true,
+      errMsg: "自定义错误信息",
+      rules: [{ type: "isInt", param: { min: 12 } }],
+      custom() {
+        return true;
+      }
     }
   ]);
   ctx.body = {
