@@ -21,6 +21,6 @@
     "koa-logger": "^3.2.1",
     "koa-router": "^7.4.0",
     "require-directory": "^2.1.1",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   }
 }
